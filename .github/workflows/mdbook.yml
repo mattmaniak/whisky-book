@@ -2,7 +2,7 @@ name: Deploy whisky-book to Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ["test"]
   workflow_dispatch:
 
 permissions:
