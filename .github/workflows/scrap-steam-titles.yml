@@ -1,0 +1,12 @@
+name: Scrap Steam Titles
+
+jobs:
+  scrap-steam-titles:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_ACTIONS: true
+    steps:
+      - name: Scrap Steam Titles
+        uses: actions/checkout@v4
+        run: scrap-steam-titles.sh
+        
