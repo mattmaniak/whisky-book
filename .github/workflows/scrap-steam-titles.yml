@@ -1,5 +1,9 @@
 name: Scrap Steam Titles
 
+on:
+  push:
+    branches: ["main"]
+
 jobs:
   scrap-steam-titles:
     runs-on: ubuntu-latest
