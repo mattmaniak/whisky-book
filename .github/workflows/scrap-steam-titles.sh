@@ -28,7 +28,7 @@ function verify_game_title_from_steam {
     rm -f "index.html"
 }
 
-for game_file in $(ls $game_support_dir); do
+for game_file in $(ls "$game_support_dir"); do
     echo "HELLO $game_file"
     verify_game_title_from_steam "$game_support_dir/$game_file"
 done
