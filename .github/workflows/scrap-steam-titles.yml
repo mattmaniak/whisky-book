@@ -1,8 +1,7 @@
 name: Scrap Steam Titles
 
 on:
-  push:
-    branches: ["main"]
+  workflow_dispatch:
 
 jobs:
   scrap-steam-titles:
@@ -13,4 +12,3 @@ jobs:
       - uses: actions/checkout@v4
       - name: Scrap Steam Titles
         run: scrap-steam-titles.sh
-        
