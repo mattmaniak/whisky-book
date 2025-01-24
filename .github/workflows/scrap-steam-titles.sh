@@ -25,10 +25,16 @@ function verify_game_title_from_steam {
 
     echo "Whisky Title: $whisky_title"
 
+    if [[ $whisky_title == $steam_title ]]; then
+        echo "Title of $whisk_title matches the Steam title."
+    else
+        echo "Title of $whisk_title differs from the Steam title which is $steam_title"
+    fi
+
     rm -f "index.html"
 }
 
 for game_file in $(ls "$game_support_dir"); do
-    echo "HELLO $game_file"
+    echo "Game file: $game_file"
     verify_game_title_from_steam "$game_support_dir/$game_file"
 done
