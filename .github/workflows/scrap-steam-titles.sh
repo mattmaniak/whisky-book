@@ -15,13 +15,14 @@ function verify_game_title_from_steam {
     wget "${generic_app_url}/${app_id}/"
 
     steam_title_raw=$(grep "<title>" "index.html" | xargs)
+    echo "DODO $steam_title_raw"
     steam_title_trimmed_front=${title_raw#<title>}
 
     steam_title=${title_trimmed_front% on Steam</title>}
     echo "Steam Title: $steam_title"
 
     whisky_title_raw=$(head -n 1 $game_file)
-    whisky_title=${whisky_title_raw# #}
+    whisky_title=${whisky_title_raw# \#}
 
     echo "Whisky Title: $whisky_title"
 
@@ -32,9 +33,12 @@ function verify_game_title_from_steam {
     fi
 
     rm -f "index.html"
+    exit 0
 }
 
 for game_file in $(ls "$game_support_dir"); do
-    echo "Game file: $game_file"
-    verify_game_title_from_steam "$game_support_dir/$game_file"
+    if [[ $game_file != "README.md" ]]; then
+        echo "Game file: $game_file"
+        verify_game_title_from_steam "$game_support_dir/$game_file"
+    fi
 done
