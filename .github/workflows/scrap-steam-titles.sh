@@ -15,8 +15,14 @@ function verify_game_title_from_steam {
     wget "${generic_app_url}/${app_id}/"
 
     steam_title_raw=$(grep "<title>" "index.html" | xargs)
+
+    if echo $steam_title_raw | grep "Welcome to Steam"; then
+        echo "Downloaded a wrong (generic) Steam page instead of the game's one."
+        exit 1
+    fi
+
     echo "DODO $steam_title_raw"
-    steam_title_trimmed_front=${title_raw#<title>}
+    steam_title_trimmed_front=${steam_title_raw#<title>}
 
     steam_title=${title_trimmed_front% on Steam</title>}
     echo "Steam Title: $steam_title"
