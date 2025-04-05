@@ -18,16 +18,15 @@
 >
 > may be used to augment performance[^1].
 
-## Papercuts
-
-- The game is always in full screen mode in the background.
-- You cannot `Cmd-Tab` away from Lethal Company or you may risk the game
-  freezing, requiring a restart. However, if you use a window manager such as
-  [AeroSpace](https://github.com/nikitabobko/AeroSpace), you may have more
-  success in being able to switch away.
-- You may need to retry multiple times when joining modded lobbies --- that is,
-  if you receive a message such as "An error occured", simply ask for another
-  invite and try joining again.
+> [!WARNING]
+> - The game is always in full screen mode in the background.
+> - You cannot `Cmd-Tab` away from Lethal Company or you may risk the game
+> freezing, requiring a restart. However, if you use a window manager such as
+> [AeroSpace](https://github.com/nikitabobko/AeroSpace), you may have more
+> success in being able to switch away.
+> - You may need to retry multiple times when joining modded lobbies --- that is,
+> if you receive a message such as "An error occured", simply ask for another
+> invite and try joining again.
 
 [^1]: [HDLethalCompany](https://thunderstore.io/c/lethal-company/p/Sligili/HDLethalCompany/)
       is not mentioned because it has not been maintained for two years.
